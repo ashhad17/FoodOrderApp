@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_back"
+    android:backgroundTint="@color/cardview_light_background">
+
+    <TextView
+        android:id="@+id/cartTitle"
+        android:layout_width="167dp"
+        android:layout_height="48dp"
+        android:text="title"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <TextView
+        android:id="@+id/feeEachItem"
+        android:layout_width="55dp"
+        android:layout_height="30dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.219" />
+
+    <TextView
+        android:id="@+id/titletxt3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Rs."
+        android:textAlignment="center"
+        android:textColor="#FB8C00"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.219" />
+
+    <TextView
+        android:id="@+id/totalEachItem"
+        android:layout_width="55dp"
+        android:layout_height="30dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.871" />
+
+    <TextView
+        android:id="@+id/titletxt5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:text="Rs."
+        android:textAlignment="center"
+        android:textColor="#FB8C00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.759"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.873" />
+
+    <ImageView
+        android:id="@+id/minuscartbtn"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/numItemTxt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.738"
+        app:srcCompat="@drawable/minus" />
+
+    <ImageView
+        android:id="@+id/pluscartbtn"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/numItemTxt"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.898"
+        app:srcCompat="@drawable/plus" />
+
+    <TextView
+        android:id="@+id/numItemTxt"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="1"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/piccart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toEndOf="@+id/piccart"
+        app:layout_constraintTop_toTopOf="@+id/piccart"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <ImageView
+        android:id="@+id/piccart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pop_1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

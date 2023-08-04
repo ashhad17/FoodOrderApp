@@ -1,0 +1,73 @@
+package com.example.foodater.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+import com.example.foodater.Adapter.CategoryListAdapter;
+import com.example.foodater.Domain.FoodDomain;
+import com.example.foodater.Helper.MyDbHandler;
+import com.example.foodater.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrdersActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private CategoryListAdapter categoryListAdapter;
+    private ArrayList<FoodDomain> foodArrayList;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_orders);
+        recyclerView=findViewById(R.id.orderListRecycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        StringBuilder sb=new StringBuilder();
+        MyDbHandler db = new MyDbHandler(OrdersActivity.this);
+        foodArrayList=new ArrayList<>();
+        List<FoodDomain> foodList=db.getAllOrders();
+        for(FoodDomain food: foodList){
+            Log.d("dbharry", "\nId: " + food.getId() + "\n" +
+                    "Name: " + food.getTitle() + "\n"+
+                    "Phone Number: " + food.getDescription() + "\n" );
+//            sb.append("\nID: "+food.getId()).append("\nName: "+contact.getName()).append("\nNumber"+contact.getPhoneNumber());
+
+            foodArrayList.add(food);
+        }
+
+//        System.out.println("ArrayList"+foodList.get(0).getTitle());
+        categoryListAdapter=new CategoryListAdapter(OrdersActivity.this,foodArrayList);
+        recyclerView.setAdapter(categoryListAdapter);
+        db.close();
+    }
+    public void orders(View v){
+        startActivity(new Intent(v.getContext(),OrdersActivity.class));
+//       startActivity(new Intent(getBaseContext(),OrdersActivity.class));
+    }
+    public void about(View v){
+//        startActivity(new Intent(MainActivity.this,AboutActivity.class));
+        startActivity(new Intent(v.getContext(),AboutActivity.class));
+    }
+    public void contact(View v){
+
+//        startActivity(new Intent(MainActivity.this,ContactActivity.class));
+        startActivity(new Intent(v.getContext(),ContactActivity.class));
+    }
+    public void home(View v){
+
+        startActivity(new Intent(v.getContext(),MainActivity.class));
+
+    }
+
+    public void cart(View v){
+
+        startActivity(new Intent(v.getContext(),CartListActivity.class));
+
+    }
+}
